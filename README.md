@@ -3,8 +3,8 @@
 This is a custom reporter for Jest that sends the results to another process using IPC. To use this reporter, add it to your Jest configuration and specify an `IPC path`:
 ```json
 {
-    reporters: [
-        ["<rootDir>/dist/ipc-reporter", { path: "IPC path" } ],
+    "reporters": [
+        ["<rootDir>/dist/ipc-reporter", { "path": "IPC path" } ],
         "default"
     ],
 }
