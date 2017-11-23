@@ -1,0 +1,52 @@
+{
+  "name": "jest-ipc-reporter",
+  "version": "0.1.0",
+
+  "description": "A custom Jest Reporter that sends results to an IPC path",
+  "private": true,
+  "author": {
+    "name": "Sean Poulter",
+    "email": "sean.poulter@gmail.com"
+  },
+
+  "license": "MIT",
+
+  "scripts": {
+    "build": "tsc",
+    "test": "jest /dist/"
+  },
+
+  "dependencies": {
+    "@types/jest": "^21.1.7",
+    "@types/node": "^8.0.53",
+    "jest": "^21.2.1",
+    "typescript": "^2.6.1"
+  },
+
+  "jest": {
+    "testMatch": ["**/*.test.js"],
+    "testPathIgnorePatterns": [
+      "/coverage/",
+      "/node_modules/",
+      "/src/"
+    ],
+
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/coverage/",
+      "/node_modules/"
+    ],
+    "mapCoverage": true,
+    "coverageReporters": [
+      "text",
+      "html"
+    ],
+
+    "reporters": [
+      "default"
+    ]
+  }
+}
