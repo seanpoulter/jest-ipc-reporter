@@ -1,6 +1,7 @@
 {
     "files.exclude": {
         "**/.git": true,
+        "coverage/**/*.{css,js,png}": true,
         "node_modules/": true
     }
 }
