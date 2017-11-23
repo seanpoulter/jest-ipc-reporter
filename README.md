@@ -10,6 +10,7 @@ This is a custom reporter for Jest that sends the results to another process usi
 }
 ```
 
+
 ## Message Format
 
 When the `onRunStart`, `onTestStart`, `onTestResult`, and `onRunComplete` methods are called, the arguments are sent in a JSON message like:
@@ -22,3 +23,9 @@ When the `onRunStart`, `onTestStart`, `onTestResult`, and `onRunComplete` method
     }
 }
 ```
+
+
+## References
+
+- [Configuring Jest, `--reporters`](http://facebook.github.io/jest/docs/en/configuration.html#reporters-array-modulename-modulename-options)
+- [Identifying paths for IPC connections](https://nodejs.org/api/net.html#net_identifying_paths_for_ipc_connections)
