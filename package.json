@@ -12,8 +12,8 @@
   "license": "MIT",
 
   "scripts": {
-    "build": "tsc",
-    "test": "jest /dist/"
+    "compile": "tsc",
+    "test": "jest"
   },
 
   "dependencies": {
