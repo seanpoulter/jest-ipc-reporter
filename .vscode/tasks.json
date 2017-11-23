@@ -1,0 +1,87 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile and Test",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": [
+                "Compile (Watch)",
+                "Test (Watch)"
+            ]
+        },
+        {
+            "label": "Clean",
+            "dependsOn": [
+                "Clean Coverage",
+                "Clean Dist"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Clean Coverage",
+            "type": "shell",
+            "linux": {
+                "command": "rm --recursive --force coverage/*"
+            },
+            "windows": {
+                "command": "rmdir /q /s coverage\\ && mkdir coverage"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "never",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Clean Dist",
+            "type": "shell",
+            "linux": {
+                "command": "rm --recursive --force dist/*"
+            },
+            "windows": {
+                "command": "rmdir /q /s dist\\ && mkdir dist"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Compile",
+            "type": "shell",
+            "command": "yarn compile",
+            "problemMatcher": "$tsc",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "dependsOn": "Clean"
+        },
+        {
+            "label": "Compile (Watch)",
+            "type": "shell",
+            "command": "yarn",
+            "args": [
+                "compile",
+                "--watch"
+            ],
+            "problemMatcher": "$tsc-watch",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "dependsOn": "Clean Dist"
+        },
+        {
+            "label": "Test (Watch)",
+            "type": "shell",
+            "command": "yarn test --watch",
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            },
+            "dependsOn": "Compile"
+        }
+    ]
+}
