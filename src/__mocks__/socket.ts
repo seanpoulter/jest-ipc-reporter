@@ -1,6 +1,6 @@
-import { MockEventEmitter } from "./event-emitter";
+import { EventEmitter } from 'events';
 
-export class MockSocket extends MockEventEmitter {
+export class MockSocket extends EventEmitter {
     connect: jest.Mock<{}> = jest.fn();
     write: jest.Mock<{}> = jest.fn();
     end: jest.Mock<{}> = jest.fn();
